@@ -1,7 +1,9 @@
 import genanki
 import random
 
-from data import sentences, czech_sentences, LESSON, DECK_ID, MODEL_ID
+from data import (sentences, czech_sentences, LESSON,
+                  DECK_ID, MODEL_ID, DECK_NAME,
+                  TARGET_LANGUAGE)
 
 
 # Function to generate a unique ID for the deck and model
@@ -15,19 +17,19 @@ my_model = genanki.Model(
     'Simple Model with Audio',
     fields=[
         {'name': 'English'},
-        {'name': 'Czech'},
+        {'name': TARGET_LANGUAGE},
         {'name': 'Audio'},
     ],
     templates=[
         {
           'name': 'Card 1',
           'qfmt': '{{English}}<br>{{Audio}}',  # Question format
-          'afmt': '{{FrontSide}}<hr id="answer">{{Czech}}',  # Answer format
+          'afmt': '{{FrontSide}}<hr id="answer">{{' + TARGET_LANGUAGE + '}}',  # Answer format
         },
     ])
 
 def create_deck():
-    my_deck = genanki.Deck(DECK_ID, f'Auto Czech::Lesson {LESSON}')
+    my_deck = genanki.Deck(DECK_ID, f'Auto {TARGET_LANGUAGE}::Lesson {LESSON}')
 
     # Path to your audio files (adjust as necessary)
     media_files = []
@@ -45,7 +47,6 @@ def create_deck():
     my_package.media_files = media_files
 
     # Export the package to an .apkg file
-    output_filename = f"Auto_Czech_{LESSON}.apkg"
-    my_package.write_to_file(output_filename)
+    my_package.write_to_file(DECK_NAME)
 
-    print(f"Deck '{output_filename}' has been created.")
+    print(f"Deck '{DECK_NAME}' has been created.")
