@@ -28,6 +28,7 @@ my_model = genanki.Model(
         },
     ])
 
+
 def create_deck():
     my_deck = genanki.Deck(DECK_ID, f'Auto {TARGET_LANGUAGE}::Lesson {LESSON}')
 
