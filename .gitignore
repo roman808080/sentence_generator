@@ -1,0 +1,8 @@
+.DS_Store
+*.apkg
+*.mp3
+__pycache__/
+*.txt
+output_audio/
+words_190324
+
