@@ -3,8 +3,10 @@ from pydub import AudioSegment
 from mutagen.id3 import ID3, TIT2, TPE1, TALB, TRCK, ID3NoHeaderError
 from mutagen.mp3 import MP3
 import os
+import shutil
 
-from data import sentences, czech_sentences, LESSON, TARGET_LANGUAGE
+from data import (sentences, czech_sentences, LESSON, TARGET_LANGUAGE,
+                  DESITNATION_DIR, DECK_NAME)
 from create_deck import create_deck
 
 
@@ -25,6 +27,7 @@ def main():
     # Ensure the output directory exists
     output_dir = f'{TARGET_LANGUAGE.lower()}_{LESSON}'
     os.makedirs(output_dir, exist_ok=True)
+    os.makedirs(DESITNATION_DIR, exist_ok=True)
 
     cz_paths = []
 
@@ -70,6 +73,9 @@ def main():
         os.remove(cz_path)
 
     print("Audio generation complete.")
+
+    shutil.copytree(output_dir, DESITNATION_DIR)
+    shutil.copy(DECK_NAME, DESITNATION_DIR)
 
 
 if __name__ == "__main__":
