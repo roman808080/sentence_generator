@@ -1,96 +1,15 @@
-LESSON = 10
+from extract_words import get_examples
+
+LESSON = 11
 
 MODEL_ID = 1617703258
 DECK_ID = 1899843332
 
+SOURCE_LANGUAGE = 'English'
 TARGET_LANGUAGE = 'Czech'
+
 DESITNATION_DIR = f'~/Synchronisation/languages/{TARGET_LANGUAGE}/automatic_{TARGET_LANGUAGE.lower()}/'
 DECK_NAME = f"Auto_{TARGET_LANGUAGE}_{LESSON}.apkg"
 
-czech_sentences = [
-    "Na základě předpokladu jsme vypracovali novou strategii.",
-    "Nakládaný hermelín je moje oblíbená pochoutka.",
-    "Autobus ujel před pěti minutami.",
-    "Od rána jsme ušli deset kilometrů.",
-    "Tato hudební skupina je velmi populární.",
-    "V této továrně vyrábějí auta.",
-    "Zítra se koná závod ve běhu na 10 kilometrů.",
-    "Zajímavá přednáška o historii se koná v knihovně.",
-    "To je příliš komplikovaný problém.",
-    "Vyřešit tuto hádanku bylo opravdu složitě.",
-    "Celá akce se složila z několika částí.",
-    "Máš pěkný úsměv.",
-    "Večer půjdu na diskotéku, kde budu tančit.",
-    "Ty dvě ledničky v obchodě byly opravdu velké.",
-    "Příští rok bych chtěl studovat v zahraničí.",
-    "Tenhle film jsem už viděl.",
-    "Když je horko, hodně piju vodu.",
-    "Na venkově je čistý vzduch a klid.",
-    "Moje babička bydlí v malé vesnici.",
-    "Děti hrajou venku fotbal.",
-    "Musíš zalít květiny, aby nevyschly.",
-    "Střechu pokryla sněhová pokrývka.",
-    "Na večírku se opil a pak usnul.",
-    "Nikdy se nesnaž ožrat, je to nezdravé.",
-    "Po té párty mám hroznou kocovinu.",
-    "Ráno se vždycky umyji studenou vodou.",
-    "Děti se na hřišti začaly prát.",
-    "Na večírku jsem pil namíchaný nápoj.",
-    "Po dědečkovi jsem zdědil starý dům.",
-    "Potřebuji si odpočinout, aspoň trochu.",
-    "Tento projekt se podařil docela dobře.",
-    "Léky musíš brát třikrát denně.",
-    "Do práce jezdím na kole.",
-    "O tomto tématu umím dost informací.",
-    "Znám člověka, který ti může pomoci.",
-    "Vím o něčem, co by tě mohlo zajímat.",
-    "Po sportu se vždy sprchovat.",
-    "V létě se rádi koupeme v jezeře.",
-    "Potřebujeme nový nábytek do obývacího pokoje.",
-    "Ovládání tohoto software je cenná dovednost.",
-    "Nezapomeň dát čárku před 'ale' ve větě."
-]
-
-sentences = [
-    "Based on the assumption, we developed a new strategy.",
-    "Pickled Camembert is my favorite delicacy.",
-    "The bus left five minutes ago.",
-    "We have walked ten kilometers since the morning.",
-    "This music band is very popular.",
-    "They manufacture cars in this factory.",
-    "A running race of 10 kilometers is happening tomorrow.",
-    "An interesting lecture about history is taking place in the library.",
-    "That is a too complicated problem.",
-    "Solving this puzzle was really complex.",
-    "The entire event consisted of several parts.",
-    "You have a nice smile.",
-    "I will go to a disco tonight where I will dance.",
-    "Those two refrigerators in the store were really big.",
-    "I would like to study abroad next year.",
-    "I have already seen this movie.",
-    "When it's hot, I drink a lot of water.",
-    "There is clean air and peace in the countryside.",
-    "My grandmother lives in a small village.",
-    "Children are playing football outside.",
-    "You need to water the flowers so they don't dry out.",
-    "The roof was covered with a layer of snow.",
-    "He got drunk at the party and then fell asleep.",
-    "Never try to get wasted, it's unhealthy.",
-    "I have a terrible hangover from that party.",
-    "I always wash myself with cold water in the morning.",
-    "Children started to fight on the playground.",
-    "I drank a mixed drink at the party.",
-    "I inherited an old house from my grandfather.",
-    "I need to rest, at least a little.",
-    "This project was quite successful.",
-    "You must take the medication three times a day.",
-    "I ride a bike to work.",
-    "I know a lot of information about this topic.",
-    "I know a person who can help you.",
-    "I know about something that might interest you.",
-    "Always take a shower after sports.",
-    "We like to swim in the lake in the summer.",
-    "We need new furniture for the living room.",
-    "Operating this software is a valuable skill.",
-    "Don't forget to put a comma before 'but' in the sentence."
-]
+sentences = get_examples(f'{SOURCE_LANGUAGE.lower()}_{LESSON}.txt')
+czech_sentences = get_examples(f'{TARGET_LANGUAGE.lower()}_{LESSON}.txt')
