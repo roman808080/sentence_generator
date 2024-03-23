@@ -74,7 +74,7 @@ def main():
 
     print("Audio generation complete.")
 
-    shutil.copytree(output_dir, DESITNATION_DIR)
+    shutil.copytree(output_dir, f'{DESITNATION_DIR}/{output_dir}')
     shutil.copy(DECK_NAME, DESITNATION_DIR)
 
 
