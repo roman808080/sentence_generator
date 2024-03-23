@@ -8,7 +8,7 @@ DECK_ID = 1899843332
 SOURCE_LANGUAGE = 'English'
 TARGET_LANGUAGE = 'Czech'
 
-DESITNATION_DIR = f'~/Synchronisation/languages/{TARGET_LANGUAGE}/automatic_{TARGET_LANGUAGE.lower()}/'
+DESITNATION_DIR = f'/Users/roman/Synchronisation/languages/{TARGET_LANGUAGE}/automatic_{TARGET_LANGUAGE.lower()}/'
 DECK_NAME = f"Auto_{TARGET_LANGUAGE}_{LESSON}.apkg"
 
 sentences = get_examples(f'{SOURCE_LANGUAGE.lower()}_{LESSON}.txt')
